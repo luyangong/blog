@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-hans-cn">
+<head>
+        <meta charset="utf-8" />
+        <title>Python中的迭代器、生成器</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">心有事焉 勿助勿忘 </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/article.html">article</a></li>
+                    <li><a href="/category/review.html">review</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/pythonzhong-de-die-dai-qi-sheng-cheng-qi.html" rel="bookmark"
+           title="Permalink to Python中的迭代器、生成器">Python中的迭代器、生成器</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-11-17T11:10:00+08:00">
+                Published: 周日 17 十一月 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/luyangong.html">luyangong</a>
+        </address>
+<p>In <a href="/category/article.html">article</a>.</p>
+
+</footer><!-- /.post-info -->      <p><code>from collections import Iterable, Iterator</code></p>
+<h3>1. 可迭代(iterable)对象</h3>
+<p>参考<a href="https://docs.python.org/zh-cn/3/glossary.html#term-iterable">官网链接</a></p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">I</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">v</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">v</span><span class="p">])</span>  <span class="c1"># 返回的应该是迭代器对象</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="n">I</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">),</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">))</span> <span class="c1"># True False</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c1"># &lt;list_iterator object at 0x00000000021C8358&gt;</span>
+
+<span class="k">class</span> <span class="nc">I</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">v</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span>
+        <span class="k">return</span> <span class="n">item</span>
+
+
+<span class="n">i</span> <span class="o">=</span> <span class="n">I</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">),</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">))</span> <span class="c1"># False False</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c1"># &lt;iterator object at 0x0000000001DFCD30&gt;</span>
+</pre></div>
+
+
+<h3>2. 迭代器(iterator)</h3>
+<p>参考<a href="https://docs.python.org/zh-cn/3/glossary.html#term-iterator">官网链接</a></p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">I</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">v</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span>
+        <span class="k">raise</span> <span class="ne">StopIteration</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="n">I</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">),</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">))</span>  <span class="c1"># True True</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c1"># &lt;__main__.I object at 0x00000000021E0898&gt;</span>
+</pre></div>
+
+
+<h3>3. 生成器(generator)</h3>
+<p>参考<a href="https://docs.python.org/zh-cn/3/glossary.html#term-generator-iterator">官网链接</a></p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">I</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">v</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="mi">1</span>
+
+
+<span class="n">i</span> <span class="o">=</span> <span class="n">I</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">),</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">))</span> <span class="c1"># True False</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c1"># &lt;generator object I.__iter__ at 0x00000000022204C0&gt;</span>
+</pre></div>
+
+
+<h3>4. 总结</h3>
+<ol>
+<li>只要实现了__iter__方法或者__getitem__方法, 就是iterable, 但Iterable只检测__iter__方法是否实现, 参见<a href="https://docs.python.org/zh-cn/3/library/collections.abc.html#collections.abc.Iterable">官网链接</a>。推荐使用iter是否返回迭代器判断可否可迭代。</li>
+<li>__getitem__方法的返回有特殊要求, 参见<a href="https://docs.python.org/3/reference/datamodel.html?highlight=__getitem__#object.__getitem__">官网链接</a>。</li>
+<li>实现了__iter__和__next__方法就是一个iterator。参见<a href="https://www.python.org/dev/peps/pep-0234/">pep234</a>。</li>
+<li>generator是返回一个generator iterator的函数。与普通函数的不同在于函数中包含 yield 表达式。</li>
+</ol>
+<h3>5. 其他参考</h3>
+<ol>
+<li><a href="http://baijiahao.baidu.com/s?id=1605521786183411929&amp;wfr=spider&amp;for=pc">Python可迭代与迭代器</a></li>
+<li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/00143178254193589df9c612d2449618ea460e7a672a366000">迭代器</a></li>
+</ol>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://www.cnblogs.com/lyg-blog/">博客园</a></li>
+                            <li><a href="https://github.com/luyangong">Github</a></li>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
