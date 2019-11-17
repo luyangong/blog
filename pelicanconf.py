@@ -10,7 +10,7 @@ PATH = 'content'
 
 TIMEZONE = 'Asia/Shanghai'
 
-DEFAULT_LANG = 'Chinese (Simplified)'
+DEFAULT_LANG = 'zh-Hans-CN'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -20,14 +20,20 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (
+    ('博客园', 'https://www.cnblogs.com/lyg-blog/'),
+    ('Github', 'https://github.com/luyangong'),
+    ('Pelican', 'http://getpelican.com/'),
+    # ('Python.org', 'http://python.org/'),
+    # ('Jinja2', 'http://jinja.pocoo.org/'),
+    # ('You can modify those links in your config file', '#'),
+)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (
+    # ('You can add links in your config file', '#'),
+    #       ('Another social link', '#'),
+)
 
 DEFAULT_PAGINATION = 10
 
