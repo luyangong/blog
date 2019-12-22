@@ -2,7 +2,7 @@
 <html lang="zh-hans-cn">
 <head>
         <meta charset="utf-8" />
-        <title>心有事焉 勿助勿忘</title>
+        <title>Vim配置文件.Vimrc</title>
         <link rel="stylesheet" href="/blog/theme/css/main.css" />
 </head>
 
@@ -10,14 +10,19 @@
         <header id="banner" class="body">
                 <h1><a href="/blog/">心有事焉 勿助勿忘 </a></h1>
                 <nav><ul>
-                    <li><a href="/blog/category/article.html">article</a></li>
+                    <li class="active"><a href="/blog/category/article.html">article</a></li>
                     <li><a href="/blog/category/review.html">review</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/blog/vimpei-zhi-wen-jian-vimrc.html" rel="bookmark"
+           title="Permalink to Vim配置文件.Vimrc">Vim配置文件.Vimrc</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/blog/vimpei-zhi-wen-jian-vimrc.html">Vim配置文件.Vimrc</a></h1>
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2019-12-22T23:40:00+08:00">
                 Published: 周日 22 十二月 2019
@@ -28,7 +33,7 @@
         </address>
 <p>In <a href="/blog/category/article.html">article</a>.</p>
 
-</footer><!-- /.post-info --><div class="highlight"><pre><span></span><span class="s2">&quot;</span><span class="s"> 底部操作指令Tab自动补全</span>
+</footer><!-- /.post-info -->      <div class="highlight"><pre><span></span><span class="s2">&quot;</span><span class="s"> 底部操作指令Tab自动补全</span>
 
 <span class="nv">set</span> <span class="nv">wildmenu</span>
 <span class="nv">set</span> <span class="nv">wildmode</span><span class="o">=</span><span class="nv">longest</span>:<span class="nv">list</span>,<span class="nv">full</span>
@@ -140,74 +145,11 @@
 <span class="nv">let</span> <span class="nv">g</span>:<span class="nv">netrw_altv</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="nv">let</span> <span class="nv">g</span>:<span class="nv">netrw_winsize</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="nv">let</span> <span class="nv">g</span>:<span class="nv">netrw_banner</span> <span class="o">=</span> <span class="mi">0</span>                                       
-</pre></div>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</pre></div>
+    </div><!-- /.entry-content -->
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/blog/pythonzhong-de-die-dai-qi-sheng-cheng-qi.html" rel="bookmark"
-                           title="Permalink to Python中的迭代器、生成器">Python中的迭代器、生成器</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2019-11-17T11:10:00+08:00">
-                Published: 周日 17 十一月 2019
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/blog/author/luyangong.html">luyangong</a>
-        </address>
-<p>In <a href="/blog/category/article.html">article</a>.</p>
-
-</footer><!-- /.post-info -->                <p><code>from collections import Iterable, Iterator</code></p>
-<h3>1. 可迭代(iterable)对象</h3>
-<p>参考<a href="https://docs.python.org/zh-cn/3/glossary.html#term-iterable">官网链接</a></p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">I</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">v</span>
-
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">iter</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">v</span><span class="p">])</span>  <span class="c1"># 返回的应该是迭代器对象</span>
-
-<span class="n">i</span> <span class="o">=</span> <span class="n">I</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">),</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">))</span> <span class="c1"># True False</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c1"># &lt;list_iterator object at 0x00000000021C8358&gt;</span>
-
-<span class="k">class</span> <span class="nc">I</span><span class="p">:</span>
-    <span class="k">def …</span></pre></div>
-                <a class="readmore" href="/blog/pythonzhong-de-die-dai-qi-sheng-cheng-qi.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/blog/welcome-huan-ying-guang-lin.html" rel="bookmark"
-                           title="Permalink to Welcome! 欢迎光临">Welcome! 欢迎光临</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2019-11-17T10:37:00+08:00">
-                Published: 周日 17 十一月 2019
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/blog/author/luyangong.html">luyangong</a>
-        </address>
-<p>In <a href="/blog/category/review.html">review</a>.</p>
-
-</footer><!-- /.post-info -->                <p>这里主要是一些学习python的记录，也许会少量夹杂一些个人感悟。 
-愿大家共同进步......</p>
-                <a class="readmore" href="/blog/welcome-huan-ying-guang-lin.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>

@@ -17,7 +17,143 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/blog/pythonzhong-de-die-dai-qi-sheng-cheng-qi.html">Python中的迭代器、生成器</a></h1>
+                    <h1 class="entry-title"><a href="/blog/vimpei-zhi-wen-jian-vimrc.html">Vim配置文件.Vimrc</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2019-12-22T23:40:00+08:00">
+                Published: 周日 22 十二月 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/blog/author/luyangong.html">luyangong</a>
+        </address>
+<p>In <a href="/blog/category/article.html">article</a>.</p>
+
+</footer><!-- /.post-info --><div class="highlight"><pre><span></span><span class="s2">&quot;</span><span class="s"> 底部操作指令Tab自动补全</span>
+
+<span class="nv">set</span> <span class="nv">wildmenu</span>
+<span class="nv">set</span> <span class="nv">wildmode</span><span class="o">=</span><span class="nv">longest</span>:<span class="nv">list</span>,<span class="nv">full</span>
+
+<span class="nv">set</span> <span class="nv">smarttab</span>
+<span class="nv">set</span> <span class="nv">showmode</span>
+<span class="nv">set</span> <span class="nv">number</span>
+<span class="nv">set</span> <span class="nv">nocompatible</span>
+
+<span class="s2">&quot;</span><span class="s"> 设置tab符长度为4个空格</span>
+<span class="nv">set</span> <span class="nv">tabstop</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="s2">&quot;</span><span class="s"> 设置换行自动缩进长度为4个空格</span>
+<span class="nv">set</span> <span class="nv">shiftwidth</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="s2">&quot;</span><span class="s"> 设置tab符自动转换为空格</span>
+<span class="nv">set</span> <span class="nv">expandtab</span>
+
+<span class="s2">&quot;</span><span class="s"> 设置智能缩进，其他可选缩进方式：autoindent, cindent, indentexpr</span>
+<span class="nv">set</span> <span class="nv">smartindent</span>
+<span class="nv">set</span> <span class="nv">autoindent</span>
+<span class="nv">set</span> <span class="nv">hlsearch</span>
+
+<span class="s2">&quot;</span><span class="s"> 快捷键</span>
+<span class="nv">let</span> <span class="nv">mapleader</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">;</span><span class="s1">&#39;</span>
+<span class="nv">nnoremap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">a</span> <span class="nv">viw</span><span class="o">&lt;</span><span class="nv">esc</span><span class="o">&gt;</span><span class="nv">bi</span><span class="s2">&quot;</span><span class="s">&lt;esc&gt;ea</span><span class="s2">&quot;</span><span class="o">&lt;</span><span class="nv">esc</span><span class="o">&gt;</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">f</span> <span class="o">^</span><span class="nv">i</span># <span class="o">&lt;</span><span class="nv">Esc</span><span class="o">&gt;</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">j</span> <span class="o">^</span><span class="mi">2</span><span class="nv">x</span> <span class="o">&lt;</span><span class="nv">Esc</span><span class="o">&gt;</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">m</span> <span class="nv">o</span><span class="o">&lt;</span><span class="nv">ESC</span><span class="o">&gt;</span>:<span class="k">call</span> <span class="nl">setline</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">.</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">if __name__ == \</span><span class="s2">&quot;</span><span class="nv">__main__</span>\<span class="s2">&quot;</span><span class="s">:</span><span class="s2">&quot;</span><span class="ss">)</span><span class="o">&lt;</span><span class="nv">ESC</span><span class="o">&gt;</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">e</span> :<span class="k">call</span> <span class="nl">append</span><span class="ss">(</span><span class="mi">0</span>, <span class="s2">&quot;</span><span class="s">#-*- coding:utf-8 -*-</span><span class="s2">&quot;</span><span class="ss">)</span><span class="o">&lt;</span><span class="nv">ESC</span><span class="o">&gt;</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">s</span> :<span class="k">call</span> <span class="nl">append</span><span class="ss">(</span><span class="mi">0</span>, <span class="s2">&quot;</span><span class="s">#!/usr/bin/python</span><span class="s2">&quot;</span><span class="ss">)</span><span class="o">&lt;</span><span class="nv">ESC</span><span class="o">&gt;</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">h</span> :<span class="k">call</span> <span class="nl">append</span><span class="ss">(</span><span class="mi">0</span>, [<span class="s2">&quot;</span><span class="s">#!/usr/bin/python</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">#-*- coding:utf-8 -*-</span><span class="s2">&quot;</span>]<span class="ss">)</span><span class="o">&lt;</span><span class="nv">ESC</span><span class="o">&gt;</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">q</span> :<span class="nv">q</span> <span class="o">&lt;</span><span class="nv">Esc</span><span class="o">&gt;</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">z</span> :<span class="nv">qa</span><span class="o">!</span> <span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">x</span> :<span class="nv">wqa</span><span class="o">!</span> <span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
+
+<span class="s2">&quot;</span><span class="s"> 缩进</span>
+<span class="nv">set</span> <span class="nv">foldmethod</span><span class="o">=</span><span class="nv">indent</span>
+<span class="nv">set</span> <span class="nv">foldlevel</span><span class="o">=</span><span class="mi">99</span>
+
+<span class="s2">&quot;</span><span class="s"> 函数跳转</span>
+<span class="nv">set</span> <span class="nv">tags</span><span class="o">=~/</span><span class="nv">tags</span>
+<span class="nv">set</span> <span class="nv">autochdir</span>
+<span class="s2">&quot;</span><span class="s"> set laststatus=2</span>
+<span class="s2">&quot;</span><span class="s"> set incsearch</span>
+
+<span class="s2">&quot;</span><span class="s"> 自动换行</span>
+<span class="nv">set</span> <span class="nv">textwidth</span><span class="o">=</span><span class="mi">100</span>
+
+<span class="s2">&quot;</span><span class="s"> syntax enable</span>
+<span class="s2">&quot;</span><span class="s"> set background=dark</span>
+<span class="s2">&quot;</span><span class="s"> colorscheme solarized</span>
+
+<span class="s2">&quot;</span><span class="s"> let g:solarized_termcolors=256</span>
+
+<span class="s2">&quot;</span><span class="s"> 定义函数，做条件映射</span>
+<span class="nv">function</span><span class="o">!</span> <span class="nv">RelativeCmd</span><span class="ss">(</span><span class="nv">cmd</span><span class="ss">)</span>
+    <span class="k">if</span> <span class="nv">eval</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">&amp;</span><span class="s1">&#39;</span> . <span class="nv">a</span>:<span class="nv">cmd</span><span class="ss">)</span> <span class="o">==</span> <span class="mi">1</span>
+        <span class="nv">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">set </span><span class="s2">&quot;</span> . <span class="s2">&quot;</span><span class="s">no</span><span class="s2">&quot;</span> . <span class="nv">a</span>:<span class="nv">cmd</span>
+    <span class="k">else</span>
+        <span class="nv">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">set </span><span class="s2">&quot;</span> . <span class="nv">a</span>:<span class="nv">cmd</span>
+    <span class="k">endif</span>
+    <span class="nv">echom</span> <span class="s1">&#39;</span><span class="s">:</span><span class="s1">&#39;</span> . <span class="nv">tmp</span>
+    <span class="k">exec</span> <span class="nv">tmp</span>
+<span class="nv">endfunction</span>
+
+<span class="nv">function</span><span class="o">!</span> <span class="nv">DirOrClose</span><span class="ss">()</span>
+    <span class="k">if</span> <span class="nv">getline</span><span class="ss">(</span><span class="mi">1</span><span class="ss">)</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="s">../</span><span class="s2">&quot;</span>
+        <span class="nv">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">q!</span><span class="s2">&quot;</span>
+    <span class="k">else</span>
+        <span class="nv">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">Vex</span><span class="s2">&quot;</span>
+    <span class="k">endif</span>
+    <span class="nv">echom</span> <span class="s2">&quot;</span><span class="s">:</span><span class="s2">&quot;</span> . <span class="nv">tmp</span>
+    <span class="k">exec</span> <span class="nv">tmp</span>
+<span class="nv">endfunction</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">P</span><span class="o">&gt;</span> :<span class="k">call</span> <span class="nl">RelativeCmd</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">paste</span><span class="s2">&quot;</span><span class="ss">)</span><span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
+<span class="nv">imap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">P</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nv">ESC</span><span class="o">&gt;</span>:<span class="nv">set</span> <span class="nv">paste</span><span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span><span class="nv">i</span>
+<span class="nv">nmap</span> @<span class="nv">r</span> :<span class="k">call</span> <span class="nl">RelativeCmd</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">relativenumber</span><span class="s2">&quot;</span><span class="ss">)</span><span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">N</span><span class="o">&gt;</span> :<span class="k">call</span> <span class="nl">RelativeCmd</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">number</span><span class="s2">&quot;</span><span class="ss">)</span><span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">L</span><span class="o">&gt;</span> :<span class="k">call</span> <span class="nl">RelativeCmd</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">cursorline</span><span class="s2">&quot;</span><span class="ss">)</span><span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">J</span><span class="o">&gt;</span> :<span class="k">call</span> <span class="nl">RelativeCmd</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">cursorcolumn</span><span class="s2">&quot;</span><span class="ss">)</span><span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">K</span><span class="o">&gt;</span> :<span class="k">call</span> <span class="nl">DirOrClose</span><span class="ss">()</span><span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">V</span><span class="o">&gt;</span> :<span class="nv">vsplit</span><span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">Z</span><span class="o">&gt;</span> :<span class="nv">q</span> <span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
+<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">X</span><span class="o">&gt;</span> :<span class="nv">wq</span> <span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
+
+<span class="nv">hi</span> <span class="nv">Search</span> <span class="nv">term</span><span class="o">=</span><span class="nv">standout</span> <span class="nv">ctermfg</span><span class="o">=</span><span class="mi">0</span> <span class="nv">ctermbg</span><span class="o">=</span><span class="mi">3</span>
+
+
+<span class="k">if</span> <span class="o">!</span> <span class="nv">has</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">gui_running</span><span class="s2">&quot;</span><span class="ss">)</span>
+    <span class="nv">set</span> <span class="nv">t_Co</span><span class="o">=</span><span class="mi">256</span>
+<span class="k">endif</span>
+
+<span class="k">if</span> <span class="o">&amp;</span><span class="nv">diff</span>
+  <span class="s2">&quot;</span><span class="s"> colorscheme evening</span>
+  <span class="nv">highlight</span> <span class="nv">DiffAdd</span>    <span class="nv">cterm</span><span class="o">=</span><span class="nv">bold</span> <span class="nv">ctermfg</span><span class="o">=</span><span class="mi">10</span> <span class="nv">ctermbg</span><span class="o">=</span><span class="mi">17</span> <span class="nv">gui</span><span class="o">=</span><span class="nv">none</span> <span class="nv">guifg</span><span class="o">=</span><span class="nv">bg</span> <span class="nv">guibg</span><span class="o">=</span><span class="nv">Red</span>
+  <span class="nv">highlight</span> <span class="nv">DiffDelete</span> <span class="nv">cterm</span><span class="o">=</span><span class="nv">bold</span> <span class="nv">ctermfg</span><span class="o">=</span><span class="mi">10</span> <span class="nv">ctermbg</span><span class="o">=</span><span class="mi">17</span> <span class="nv">gui</span><span class="o">=</span><span class="nv">none</span> <span class="nv">guifg</span><span class="o">=</span><span class="nv">bg</span> <span class="nv">guibg</span><span class="o">=</span><span class="nv">Red</span>
+  <span class="nv">highlight</span> <span class="nv">DiffChange</span> <span class="nv">cterm</span><span class="o">=</span><span class="nv">bold</span> <span class="nv">ctermfg</span><span class="o">=</span><span class="mi">10</span> <span class="nv">ctermbg</span><span class="o">=</span><span class="mi">17</span> <span class="nv">gui</span><span class="o">=</span><span class="nv">none</span> <span class="nv">guifg</span><span class="o">=</span><span class="nv">bg</span> <span class="nv">guibg</span><span class="o">=</span><span class="nv">Red</span>
+  <span class="nv">highlight</span> <span class="nv">DiffText</span>   <span class="nv">cterm</span><span class="o">=</span><span class="nv">bold</span> <span class="nv">ctermfg</span><span class="o">=</span><span class="mi">10</span> <span class="nv">ctermbg</span><span class="o">=</span><span class="mi">88</span> <span class="nv">gui</span><span class="o">=</span><span class="nv">none</span> <span class="nv">guifg</span><span class="o">=</span><span class="nv">bg</span> <span class="nv">guibg</span><span class="o">=</span><span class="nv">Red</span>
+<span class="k">endif</span>
+
+<span class="s2">&quot;</span><span class="s"> 设置窗口的行和列</span>
+<span class="s2">&quot;</span><span class="s"> set lines=35 columns=118</span>
+
+<span class="s2">&quot;</span><span class="s"> 设置目录树</span>
+<span class="nv">let</span> <span class="nv">g</span>:<span class="nv">netrw_liststyle</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nv">let</span> <span class="nv">g</span>:<span class="nv">netrw_alto</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nv">let</span> <span class="nv">g</span>:<span class="nv">netrw_browse_split</span><span class="o">=</span><span class="mi">3</span>
+<span class="nv">let</span> <span class="nv">g</span>:<span class="nv">netrw_altv</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nv">let</span> <span class="nv">g</span>:<span class="nv">netrw_winsize</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="nv">let</span> <span class="nv">g</span>:<span class="nv">netrw_banner</span> <span class="o">=</span> <span class="mi">0</span>                                       
+</pre></div>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/blog/pythonzhong-de-die-dai-qi-sheng-cheng-qi.html" rel="bookmark"
+                           title="Permalink to Python中的迭代器、生成器">Python中的迭代器、生成器</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2019-11-17T11:10:00+08:00">
                 Published: 周日 17 十一月 2019
@@ -28,7 +164,7 @@
         </address>
 <p>In <a href="/blog/category/article.html">article</a>.</p>
 
-</footer><!-- /.post-info --><p><code>from collections import Iterable, Iterator</code></p>
+</footer><!-- /.post-info -->                <p><code>from collections import Iterable, Iterator</code></p>
 <h3>1. 可迭代(iterable)对象</h3>
 <p>参考<a href="https://docs.python.org/zh-cn/3/glossary.html#term-iterable">官网链接</a></p>
 <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">I</span><span class="p">:</span>
@@ -43,75 +179,10 @@
 <span class="k">print</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c1"># &lt;list_iterator object at 0x00000000021C8358&gt;</span>
 
 <span class="k">class</span> <span class="nc">I</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">v</span>
-
-    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">IndexError</span>
-        <span class="k">return</span> <span class="n">item</span>
-
-
-<span class="n">i</span> <span class="o">=</span> <span class="n">I</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">),</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">))</span> <span class="c1"># False False</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c1"># &lt;iterator object at 0x0000000001DFCD30&gt;</span>
-</pre></div>
-
-
-<h3>2. 迭代器(iterator)</h3>
-<p>参考<a href="https://docs.python.org/zh-cn/3/glossary.html#term-iterator">官网链接</a></p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">I</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">v</span>
-
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span>
-
-    <span class="k">def</span> <span class="nf">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span>
-        <span class="k">raise</span> <span class="ne">StopIteration</span>
-
-<span class="n">i</span> <span class="o">=</span> <span class="n">I</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">),</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">))</span>  <span class="c1"># True True</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c1"># &lt;__main__.I object at 0x00000000021E0898&gt;</span>
-</pre></div>
-
-
-<h3>3. 生成器(generator)</h3>
-<p>参考<a href="https://docs.python.org/zh-cn/3/glossary.html#term-generator-iterator">官网链接</a></p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">I</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">v</span>
-
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="mi">1</span>
-
-
-<span class="n">i</span> <span class="o">=</span> <span class="n">I</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">),</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">))</span> <span class="c1"># True False</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c1"># &lt;generator object I.__iter__ at 0x00000000022204C0&gt;</span>
-</pre></div>
-
-
-<h3>4. 总结</h3>
-<ol>
-<li>只要实现了__iter__方法或者__getitem__方法, 就是iterable, 但Iterable只检测__iter__方法是否实现, 参见<a href="https://docs.python.org/zh-cn/3/library/collections.abc.html#collections.abc.Iterable">官网链接</a>。推荐使用iter是否返回迭代器判断可否可迭代。</li>
-<li>__getitem__方法的返回有特殊要求, 参见<a href="https://docs.python.org/3/reference/datamodel.html?highlight=__getitem__#object.__getitem__">官网链接</a>。</li>
-<li>实现了__iter__和__next__方法就是一个iterator。参见<a href="https://www.python.org/dev/peps/pep-0234/">pep234</a>。</li>
-<li>generator是返回一个generator iterator的函数。与普通函数的不同在于函数中包含 yield 表达式。</li>
-</ol>
-<h3>5. 其他参考</h3>
-<ol>
-<li><a href="http://baijiahao.baidu.com/s?id=1605521786183411929&amp;wfr=spider&amp;for=pc">Python可迭代与迭代器</a></li>
-<li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/00143178254193589df9c612d2449618ea460e7a672a366000">迭代器</a></li>
-</ol>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+    <span class="k">def …</span></pre></div>
+                <a class="readmore" href="/blog/pythonzhong-de-die-dai-qi-sheng-cheng-qi.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
