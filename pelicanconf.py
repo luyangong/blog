@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'luyangong'
-SITENAME = '心有事焉 勿助勿忘'
+SITENAME = 'NOW BEGINS'
 SITEURL = '/blog'
 
 PATH = 'content'
@@ -39,3 +39,4 @@ DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+OUTPUT_PATH = "docs"

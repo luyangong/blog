@@ -2,13 +2,15 @@
 <html lang="zh-hans-cn">
 <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
         <title>心有事焉 勿助勿忘 - luyangong</title>
         <link rel="stylesheet" href="/blog/theme/css/main.css" />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="/blog/">心有事焉 勿助勿忘 </a></h1>
+                <h1><a href="/blog/">心有事焉 勿助勿忘</a></h1>
                 <nav><ul>
                     <li><a href="/blog/category/article.html">article</a></li>
                     <li><a href="/blog/category/review.html">review</a></li>
@@ -20,7 +22,7 @@
                     <h1 class="entry-title"><a href="/blog/vimpei-zhi-wen-jian-vimrc.html">Vim配置文件.Vimrc</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2019-12-22T23:40:00+08:00">
-                Published: 周日 22 十二月 2019
+                Published: Sun 22 December 2019
         </abbr>
 
         <address class="vcard author">
@@ -28,119 +30,119 @@
         </address>
 <p>In <a href="/blog/category/article.html">article</a>.</p>
 
-</footer><!-- /.post-info --><div class="highlight"><pre><span></span><span class="s2">&quot;</span><span class="s"> 底部操作指令Tab自动补全</span>
+</footer><!-- /.post-info --><div class="highlight"><pre><span></span><code><span class="s2">&quot; 底部操作指令Tab自动补全</span>
 
-<span class="nv">set</span> <span class="nv">wildmenu</span>
-<span class="nv">set</span> <span class="nv">wildmode</span><span class="o">=</span><span class="nv">longest</span>:<span class="nv">list</span>,<span class="nv">full</span>
+<span class="n">set</span><span class="w"> </span><span class="n">wildmenu</span>
+<span class="n">set</span><span class="w"> </span><span class="n">wildmode</span><span class="o">=</span><span class="n">longest</span><span class="p">:</span><span class="n">list</span><span class="p">,</span><span class="n">full</span>
 
-<span class="nv">set</span> <span class="nv">smarttab</span>
-<span class="nv">set</span> <span class="nv">showmode</span>
-<span class="nv">set</span> <span class="nv">number</span>
-<span class="nv">set</span> <span class="nv">nocompatible</span>
+<span class="n">set</span><span class="w"> </span><span class="n">smarttab</span>
+<span class="n">set</span><span class="w"> </span><span class="n">showmode</span>
+<span class="n">set</span><span class="w"> </span><span class="n">number</span>
+<span class="n">set</span><span class="w"> </span><span class="n">nocompatible</span>
 
-<span class="s2">&quot;</span><span class="s"> 设置tab符长度为4个空格</span>
-<span class="nv">set</span> <span class="nv">tabstop</span><span class="o">=</span><span class="mi">4</span>
+<span class="s2">&quot; 设置tab符长度为4个空格</span>
+<span class="n">set</span><span class="w"> </span><span class="n">tabstop</span><span class="o">=</span><span class="mi">4</span>
 
-<span class="s2">&quot;</span><span class="s"> 设置换行自动缩进长度为4个空格</span>
-<span class="nv">set</span> <span class="nv">shiftwidth</span><span class="o">=</span><span class="mi">4</span>
+<span class="s2">&quot; 设置换行自动缩进长度为4个空格</span>
+<span class="n">set</span><span class="w"> </span><span class="n">shiftwidth</span><span class="o">=</span><span class="mi">4</span>
 
-<span class="s2">&quot;</span><span class="s"> 设置tab符自动转换为空格</span>
-<span class="nv">set</span> <span class="nv">expandtab</span>
+<span class="s2">&quot; 设置tab符自动转换为空格</span>
+<span class="n">set</span><span class="w"> </span><span class="n">expandtab</span>
 
-<span class="s2">&quot;</span><span class="s"> 设置智能缩进，其他可选缩进方式：autoindent, cindent, indentexpr</span>
-<span class="nv">set</span> <span class="nv">smartindent</span>
-<span class="nv">set</span> <span class="nv">autoindent</span>
-<span class="nv">set</span> <span class="nv">hlsearch</span>
+<span class="s2">&quot; 设置智能缩进，其他可选缩进方式：autoindent, cindent, indentexpr</span>
+<span class="n">set</span><span class="w"> </span><span class="n">smartindent</span>
+<span class="n">set</span><span class="w"> </span><span class="n">autoindent</span>
+<span class="n">set</span><span class="w"> </span><span class="n">hlsearch</span>
 
-<span class="s2">&quot;</span><span class="s"> 快捷键</span>
-<span class="nv">let</span> <span class="nv">mapleader</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">;</span><span class="s1">&#39;</span>
-<span class="nv">nnoremap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">a</span> <span class="nv">viw</span><span class="o">&lt;</span><span class="nv">esc</span><span class="o">&gt;</span><span class="nv">bi</span><span class="s2">&quot;</span><span class="s">&lt;esc&gt;ea</span><span class="s2">&quot;</span><span class="o">&lt;</span><span class="nv">esc</span><span class="o">&gt;</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">f</span> <span class="o">^</span><span class="nv">i</span># <span class="o">&lt;</span><span class="nv">Esc</span><span class="o">&gt;</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">j</span> <span class="o">^</span><span class="mi">2</span><span class="nv">x</span> <span class="o">&lt;</span><span class="nv">Esc</span><span class="o">&gt;</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">m</span> <span class="nv">o</span><span class="o">&lt;</span><span class="nv">ESC</span><span class="o">&gt;</span>:<span class="k">call</span> <span class="nl">setline</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">.</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">if __name__ == \</span><span class="s2">&quot;</span><span class="nv">__main__</span>\<span class="s2">&quot;</span><span class="s">:</span><span class="s2">&quot;</span><span class="ss">)</span><span class="o">&lt;</span><span class="nv">ESC</span><span class="o">&gt;</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">e</span> :<span class="k">call</span> <span class="nl">append</span><span class="ss">(</span><span class="mi">0</span>, <span class="s2">&quot;</span><span class="s">#-*- coding:utf-8 -*-</span><span class="s2">&quot;</span><span class="ss">)</span><span class="o">&lt;</span><span class="nv">ESC</span><span class="o">&gt;</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">s</span> :<span class="k">call</span> <span class="nl">append</span><span class="ss">(</span><span class="mi">0</span>, <span class="s2">&quot;</span><span class="s">#!/usr/bin/python</span><span class="s2">&quot;</span><span class="ss">)</span><span class="o">&lt;</span><span class="nv">ESC</span><span class="o">&gt;</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">h</span> :<span class="k">call</span> <span class="nl">append</span><span class="ss">(</span><span class="mi">0</span>, [<span class="s2">&quot;</span><span class="s">#!/usr/bin/python</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">#-*- coding:utf-8 -*-</span><span class="s2">&quot;</span>]<span class="ss">)</span><span class="o">&lt;</span><span class="nv">ESC</span><span class="o">&gt;</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">q</span> :<span class="nv">q</span> <span class="o">&lt;</span><span class="nv">Esc</span><span class="o">&gt;</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">z</span> :<span class="nv">qa</span><span class="o">!</span> <span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">Leader</span><span class="o">&gt;</span><span class="nv">x</span> :<span class="nv">wqa</span><span class="o">!</span> <span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
+<span class="s2">&quot; 快捷键</span>
+<span class="n">let</span><span class="w"> </span><span class="n">mapleader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;;&#39;</span>
+<span class="n">nnoremap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Leader</span><span class="o">&gt;</span><span class="n">a</span><span class="w"> </span><span class="n">viw</span><span class="o">&lt;</span><span class="n">esc</span><span class="o">&gt;</span><span class="n">bi</span><span class="s2">&quot;&lt;esc&gt;ea&quot;</span><span class="o">&lt;</span><span class="n">esc</span><span class="o">&gt;</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Leader</span><span class="o">&gt;</span><span class="n">f</span><span class="w"> </span><span class="o">^</span><span class="n">i</span><span class="c1"># &lt;Esc&gt;</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Leader</span><span class="o">&gt;</span><span class="n">j</span><span class="w"> </span><span class="o">^</span><span class="mi">2</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Esc</span><span class="o">&gt;</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Leader</span><span class="o">&gt;</span><span class="n">m</span><span class="w"> </span><span class="n">o</span><span class="o">&lt;</span><span class="n">ESC</span><span class="o">&gt;</span><span class="p">:</span><span class="n">call</span><span class="w"> </span><span class="n">setline</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;if __name__ == </span><span class="se">\&quot;</span><span class="s2">__main__</span><span class="se">\&quot;</span><span class="s2">:&quot;</span><span class="p">)</span><span class="o">&lt;</span><span class="n">ESC</span><span class="o">&gt;</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Leader</span><span class="o">&gt;</span><span class="n">e</span><span class="w"> </span><span class="p">:</span><span class="n">call</span><span class="w"> </span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;#-*- coding:utf-8 -*-&quot;</span><span class="p">)</span><span class="o">&lt;</span><span class="n">ESC</span><span class="o">&gt;</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Leader</span><span class="o">&gt;</span><span class="n">s</span><span class="w"> </span><span class="p">:</span><span class="n">call</span><span class="w"> </span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;#!/usr/bin/python&quot;</span><span class="p">)</span><span class="o">&lt;</span><span class="n">ESC</span><span class="o">&gt;</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Leader</span><span class="o">&gt;</span><span class="n">h</span><span class="w"> </span><span class="p">:</span><span class="n">call</span><span class="w"> </span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;#!/usr/bin/python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;#-*- coding:utf-8 -*-&quot;</span><span class="p">])</span><span class="o">&lt;</span><span class="n">ESC</span><span class="o">&gt;</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Leader</span><span class="o">&gt;</span><span class="n">q</span><span class="w"> </span><span class="p">:</span><span class="n">q</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Esc</span><span class="o">&gt;</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Leader</span><span class="o">&gt;</span><span class="n">z</span><span class="w"> </span><span class="p">:</span><span class="n">qa</span><span class="o">!</span><span class="w"> </span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Leader</span><span class="o">&gt;</span><span class="n">x</span><span class="w"> </span><span class="p">:</span><span class="n">wqa</span><span class="o">!</span><span class="w"> </span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span>
 
-<span class="s2">&quot;</span><span class="s"> 缩进</span>
-<span class="nv">set</span> <span class="nv">foldmethod</span><span class="o">=</span><span class="nv">indent</span>
-<span class="nv">set</span> <span class="nv">foldlevel</span><span class="o">=</span><span class="mi">99</span>
+<span class="s2">&quot; 缩进</span>
+<span class="n">set</span><span class="w"> </span><span class="n">foldmethod</span><span class="o">=</span><span class="n">indent</span>
+<span class="n">set</span><span class="w"> </span><span class="n">foldlevel</span><span class="o">=</span><span class="mi">99</span>
 
-<span class="s2">&quot;</span><span class="s"> 函数跳转</span>
-<span class="nv">set</span> <span class="nv">tags</span><span class="o">=~/</span><span class="nv">tags</span>
-<span class="nv">set</span> <span class="nv">autochdir</span>
-<span class="s2">&quot;</span><span class="s"> set laststatus=2</span>
-<span class="s2">&quot;</span><span class="s"> set incsearch</span>
+<span class="s2">&quot; 函数跳转</span>
+<span class="n">set</span><span class="w"> </span><span class="n">tags</span><span class="o">=~/</span><span class="n">tags</span>
+<span class="n">set</span><span class="w"> </span><span class="n">autochdir</span>
+<span class="s2">&quot; set laststatus=2</span>
+<span class="s2">&quot; set incsearch</span>
 
-<span class="s2">&quot;</span><span class="s"> 自动换行</span>
-<span class="nv">set</span> <span class="nv">textwidth</span><span class="o">=</span><span class="mi">100</span>
+<span class="s2">&quot; 自动换行</span>
+<span class="n">set</span><span class="w"> </span><span class="n">textwidth</span><span class="o">=</span><span class="mi">100</span>
 
-<span class="s2">&quot;</span><span class="s"> syntax enable</span>
-<span class="s2">&quot;</span><span class="s"> set background=dark</span>
-<span class="s2">&quot;</span><span class="s"> colorscheme solarized</span>
+<span class="s2">&quot; syntax enable</span>
+<span class="s2">&quot; set background=dark</span>
+<span class="s2">&quot; colorscheme solarized</span>
 
-<span class="s2">&quot;</span><span class="s"> let g:solarized_termcolors=256</span>
+<span class="s2">&quot; let g:solarized_termcolors=256</span>
 
-<span class="s2">&quot;</span><span class="s"> 定义函数，做条件映射</span>
-<span class="nv">function</span><span class="o">!</span> <span class="nv">RelativeCmd</span><span class="ss">(</span><span class="nv">cmd</span><span class="ss">)</span>
-    <span class="k">if</span> <span class="nv">eval</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">&amp;</span><span class="s1">&#39;</span> . <span class="nv">a</span>:<span class="nv">cmd</span><span class="ss">)</span> <span class="o">==</span> <span class="mi">1</span>
-        <span class="nv">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">set </span><span class="s2">&quot;</span> . <span class="s2">&quot;</span><span class="s">no</span><span class="s2">&quot;</span> . <span class="nv">a</span>:<span class="nv">cmd</span>
-    <span class="k">else</span>
-        <span class="nv">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">set </span><span class="s2">&quot;</span> . <span class="nv">a</span>:<span class="nv">cmd</span>
-    <span class="k">endif</span>
-    <span class="nv">echom</span> <span class="s1">&#39;</span><span class="s">:</span><span class="s1">&#39;</span> . <span class="nv">tmp</span>
-    <span class="k">exec</span> <span class="nv">tmp</span>
-<span class="nv">endfunction</span>
+<span class="s2">&quot; 定义函数，做条件映射</span>
+<span class="n">function</span><span class="o">!</span><span class="w"> </span><span class="n">RelativeCmd</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">a</span><span class="p">:</span><span class="n">cmd</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="n">let</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;set &quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s2">&quot;no&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">a</span><span class="p">:</span><span class="n">cmd</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">let</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;set &quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">a</span><span class="p">:</span><span class="n">cmd</span>
+<span class="w">    </span><span class="n">endif</span>
+<span class="w">    </span><span class="n">echom</span><span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">tmp</span>
+<span class="w">    </span><span class="n">exec</span><span class="w"> </span><span class="n">tmp</span>
+<span class="n">endfunction</span>
 
-<span class="nv">function</span><span class="o">!</span> <span class="nv">DirOrClose</span><span class="ss">()</span>
-    <span class="k">if</span> <span class="nv">getline</span><span class="ss">(</span><span class="mi">1</span><span class="ss">)</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="s">../</span><span class="s2">&quot;</span>
-        <span class="nv">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">q!</span><span class="s2">&quot;</span>
-    <span class="k">else</span>
-        <span class="nv">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">Vex</span><span class="s2">&quot;</span>
-    <span class="k">endif</span>
-    <span class="nv">echom</span> <span class="s2">&quot;</span><span class="s">:</span><span class="s2">&quot;</span> . <span class="nv">tmp</span>
-    <span class="k">exec</span> <span class="nv">tmp</span>
-<span class="nv">endfunction</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">P</span><span class="o">&gt;</span> :<span class="k">call</span> <span class="nl">RelativeCmd</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">paste</span><span class="s2">&quot;</span><span class="ss">)</span><span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
-<span class="nv">imap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">P</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nv">ESC</span><span class="o">&gt;</span>:<span class="nv">set</span> <span class="nv">paste</span><span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span><span class="nv">i</span>
-<span class="nv">nmap</span> @<span class="nv">r</span> :<span class="k">call</span> <span class="nl">RelativeCmd</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">relativenumber</span><span class="s2">&quot;</span><span class="ss">)</span><span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">N</span><span class="o">&gt;</span> :<span class="k">call</span> <span class="nl">RelativeCmd</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">number</span><span class="s2">&quot;</span><span class="ss">)</span><span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">L</span><span class="o">&gt;</span> :<span class="k">call</span> <span class="nl">RelativeCmd</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">cursorline</span><span class="s2">&quot;</span><span class="ss">)</span><span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">J</span><span class="o">&gt;</span> :<span class="k">call</span> <span class="nl">RelativeCmd</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">cursorcolumn</span><span class="s2">&quot;</span><span class="ss">)</span><span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">K</span><span class="o">&gt;</span> :<span class="k">call</span> <span class="nl">DirOrClose</span><span class="ss">()</span><span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">V</span><span class="o">&gt;</span> :<span class="nv">vsplit</span><span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">Z</span><span class="o">&gt;</span> :<span class="nv">q</span> <span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
-<span class="nv">nmap</span> <span class="o">&lt;</span><span class="nv">C</span><span class="o">-</span><span class="nv">X</span><span class="o">&gt;</span> :<span class="nv">wq</span> <span class="o">&lt;</span><span class="nv">CR</span><span class="o">&gt;</span>
+<span class="n">function</span><span class="o">!</span><span class="w"> </span><span class="n">DirOrClose</span><span class="p">()</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">getline</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;../&quot;</span>
+<span class="w">        </span><span class="n">let</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;q!&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">let</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Vex&quot;</span>
+<span class="w">    </span><span class="n">endif</span>
+<span class="w">    </span><span class="n">echom</span><span class="w"> </span><span class="s2">&quot;:&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">tmp</span>
+<span class="w">    </span><span class="n">exec</span><span class="w"> </span><span class="n">tmp</span>
+<span class="n">endfunction</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">C</span><span class="o">-</span><span class="n">P</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">call</span><span class="w"> </span><span class="n">RelativeCmd</span><span class="p">(</span><span class="s2">&quot;paste&quot;</span><span class="p">)</span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span>
+<span class="n">imap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">C</span><span class="o">-</span><span class="n">P</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">ESC</span><span class="o">&gt;</span><span class="p">:</span><span class="n">set</span><span class="w"> </span><span class="n">paste</span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span><span class="n">i</span>
+<span class="n">nmap</span><span class="w"> </span><span class="err">@</span><span class="n">r</span><span class="w"> </span><span class="p">:</span><span class="n">call</span><span class="w"> </span><span class="n">RelativeCmd</span><span class="p">(</span><span class="s2">&quot;relativenumber&quot;</span><span class="p">)</span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">C</span><span class="o">-</span><span class="n">N</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">call</span><span class="w"> </span><span class="n">RelativeCmd</span><span class="p">(</span><span class="s2">&quot;number&quot;</span><span class="p">)</span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">C</span><span class="o">-</span><span class="n">L</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">call</span><span class="w"> </span><span class="n">RelativeCmd</span><span class="p">(</span><span class="s2">&quot;cursorline&quot;</span><span class="p">)</span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">C</span><span class="o">-</span><span class="n">J</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">call</span><span class="w"> </span><span class="n">RelativeCmd</span><span class="p">(</span><span class="s2">&quot;cursorcolumn&quot;</span><span class="p">)</span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">C</span><span class="o">-</span><span class="n">K</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">call</span><span class="w"> </span><span class="n">DirOrClose</span><span class="p">()</span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">C</span><span class="o">-</span><span class="n">V</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">vsplit</span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">C</span><span class="o">-</span><span class="n">Z</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">q</span><span class="w"> </span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span>
+<span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">C</span><span class="o">-</span><span class="n">X</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">wq</span><span class="w"> </span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span>
 
-<span class="nv">hi</span> <span class="nv">Search</span> <span class="nv">term</span><span class="o">=</span><span class="nv">standout</span> <span class="nv">ctermfg</span><span class="o">=</span><span class="mi">0</span> <span class="nv">ctermbg</span><span class="o">=</span><span class="mi">3</span>
+<span class="n">hi</span><span class="w"> </span><span class="n">Search</span><span class="w"> </span><span class="n">term</span><span class="o">=</span><span class="n">standout</span><span class="w"> </span><span class="n">ctermfg</span><span class="o">=</span><span class="mi">0</span><span class="w"> </span><span class="n">ctermbg</span><span class="o">=</span><span class="mi">3</span>
 
 
-<span class="k">if</span> <span class="o">!</span> <span class="nv">has</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">gui_running</span><span class="s2">&quot;</span><span class="ss">)</span>
-    <span class="nv">set</span> <span class="nv">t_Co</span><span class="o">=</span><span class="mi">256</span>
-<span class="k">endif</span>
+<span class="k">if</span><span class="w"> </span><span class="o">!</span><span class="w"> </span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;gui_running&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">set</span><span class="w"> </span><span class="n">t_Co</span><span class="o">=</span><span class="mi">256</span>
+<span class="n">endif</span>
 
-<span class="k">if</span> <span class="o">&amp;</span><span class="nv">diff</span>
-  <span class="s2">&quot;</span><span class="s"> colorscheme evening</span>
-  <span class="nv">highlight</span> <span class="nv">DiffAdd</span>    <span class="nv">cterm</span><span class="o">=</span><span class="nv">bold</span> <span class="nv">ctermfg</span><span class="o">=</span><span class="mi">10</span> <span class="nv">ctermbg</span><span class="o">=</span><span class="mi">17</span> <span class="nv">gui</span><span class="o">=</span><span class="nv">none</span> <span class="nv">guifg</span><span class="o">=</span><span class="nv">bg</span> <span class="nv">guibg</span><span class="o">=</span><span class="nv">Red</span>
-  <span class="nv">highlight</span> <span class="nv">DiffDelete</span> <span class="nv">cterm</span><span class="o">=</span><span class="nv">bold</span> <span class="nv">ctermfg</span><span class="o">=</span><span class="mi">10</span> <span class="nv">ctermbg</span><span class="o">=</span><span class="mi">17</span> <span class="nv">gui</span><span class="o">=</span><span class="nv">none</span> <span class="nv">guifg</span><span class="o">=</span><span class="nv">bg</span> <span class="nv">guibg</span><span class="o">=</span><span class="nv">Red</span>
-  <span class="nv">highlight</span> <span class="nv">DiffChange</span> <span class="nv">cterm</span><span class="o">=</span><span class="nv">bold</span> <span class="nv">ctermfg</span><span class="o">=</span><span class="mi">10</span> <span class="nv">ctermbg</span><span class="o">=</span><span class="mi">17</span> <span class="nv">gui</span><span class="o">=</span><span class="nv">none</span> <span class="nv">guifg</span><span class="o">=</span><span class="nv">bg</span> <span class="nv">guibg</span><span class="o">=</span><span class="nv">Red</span>
-  <span class="nv">highlight</span> <span class="nv">DiffText</span>   <span class="nv">cterm</span><span class="o">=</span><span class="nv">bold</span> <span class="nv">ctermfg</span><span class="o">=</span><span class="mi">10</span> <span class="nv">ctermbg</span><span class="o">=</span><span class="mi">88</span> <span class="nv">gui</span><span class="o">=</span><span class="nv">none</span> <span class="nv">guifg</span><span class="o">=</span><span class="nv">bg</span> <span class="nv">guibg</span><span class="o">=</span><span class="nv">Red</span>
-<span class="k">endif</span>
+<span class="k">if</span><span class="w"> </span><span class="o">&amp;</span><span class="n">diff</span>
+<span class="w">  </span><span class="s2">&quot; colorscheme evening</span>
+<span class="w">  </span><span class="n">highlight</span><span class="w"> </span><span class="n">DiffAdd</span><span class="w">    </span><span class="n">cterm</span><span class="o">=</span><span class="n">bold</span><span class="w"> </span><span class="n">ctermfg</span><span class="o">=</span><span class="mi">10</span><span class="w"> </span><span class="n">ctermbg</span><span class="o">=</span><span class="mi">17</span><span class="w"> </span><span class="n">gui</span><span class="o">=</span><span class="n">none</span><span class="w"> </span><span class="n">guifg</span><span class="o">=</span><span class="n">bg</span><span class="w"> </span><span class="n">guibg</span><span class="o">=</span><span class="n">Red</span>
+<span class="w">  </span><span class="n">highlight</span><span class="w"> </span><span class="n">DiffDelete</span><span class="w"> </span><span class="n">cterm</span><span class="o">=</span><span class="n">bold</span><span class="w"> </span><span class="n">ctermfg</span><span class="o">=</span><span class="mi">10</span><span class="w"> </span><span class="n">ctermbg</span><span class="o">=</span><span class="mi">17</span><span class="w"> </span><span class="n">gui</span><span class="o">=</span><span class="n">none</span><span class="w"> </span><span class="n">guifg</span><span class="o">=</span><span class="n">bg</span><span class="w"> </span><span class="n">guibg</span><span class="o">=</span><span class="n">Red</span>
+<span class="w">  </span><span class="n">highlight</span><span class="w"> </span><span class="n">DiffChange</span><span class="w"> </span><span class="n">cterm</span><span class="o">=</span><span class="n">bold</span><span class="w"> </span><span class="n">ctermfg</span><span class="o">=</span><span class="mi">10</span><span class="w"> </span><span class="n">ctermbg</span><span class="o">=</span><span class="mi">17</span><span class="w"> </span><span class="n">gui</span><span class="o">=</span><span class="n">none</span><span class="w"> </span><span class="n">guifg</span><span class="o">=</span><span class="n">bg</span><span class="w"> </span><span class="n">guibg</span><span class="o">=</span><span class="n">Red</span>
+<span class="w">  </span><span class="n">highlight</span><span class="w"> </span><span class="n">DiffText</span><span class="w">   </span><span class="n">cterm</span><span class="o">=</span><span class="n">bold</span><span class="w"> </span><span class="n">ctermfg</span><span class="o">=</span><span class="mi">10</span><span class="w"> </span><span class="n">ctermbg</span><span class="o">=</span><span class="mi">88</span><span class="w"> </span><span class="n">gui</span><span class="o">=</span><span class="n">none</span><span class="w"> </span><span class="n">guifg</span><span class="o">=</span><span class="n">bg</span><span class="w"> </span><span class="n">guibg</span><span class="o">=</span><span class="n">Red</span>
+<span class="n">endif</span>
 
-<span class="s2">&quot;</span><span class="s"> 设置窗口的行和列</span>
-<span class="s2">&quot;</span><span class="s"> set lines=35 columns=118</span>
+<span class="s2">&quot; 设置窗口的行和列</span>
+<span class="s2">&quot; set lines=35 columns=118</span>
 
-<span class="s2">&quot;</span><span class="s"> 设置目录树</span>
-<span class="nv">let</span> <span class="nv">g</span>:<span class="nv">netrw_liststyle</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="nv">let</span> <span class="nv">g</span>:<span class="nv">netrw_alto</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="nv">let</span> <span class="nv">g</span>:<span class="nv">netrw_browse_split</span><span class="o">=</span><span class="mi">3</span>
-<span class="nv">let</span> <span class="nv">g</span>:<span class="nv">netrw_altv</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="nv">let</span> <span class="nv">g</span>:<span class="nv">netrw_winsize</span> <span class="o">=</span> <span class="mi">15</span>
-<span class="nv">let</span> <span class="nv">g</span>:<span class="nv">netrw_banner</span> <span class="o">=</span> <span class="mi">0</span>                                       
-</pre></div>                </article>
+<span class="s2">&quot; 设置目录树</span>
+<span class="n">let</span><span class="w"> </span><span class="n">g</span><span class="p">:</span><span class="n">netrw_liststyle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span>
+<span class="n">let</span><span class="w"> </span><span class="n">g</span><span class="p">:</span><span class="n">netrw_alto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="n">let</span><span class="w"> </span><span class="n">g</span><span class="p">:</span><span class="n">netrw_browse_split</span><span class="o">=</span><span class="mi">3</span>
+<span class="n">let</span><span class="w"> </span><span class="n">g</span><span class="p">:</span><span class="n">netrw_altv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="n">let</span><span class="w"> </span><span class="n">g</span><span class="p">:</span><span class="n">netrw_winsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span>
+<span class="n">let</span><span class="w"> </span><span class="n">g</span><span class="p">:</span><span class="n">netrw_banner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">                                       </span>
+</code></pre></div>                </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
@@ -156,7 +158,7 @@
                 <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2019-11-17T11:10:00+08:00">
-                Published: 周日 17 十一月 2019
+                Published: Sun 17 November 2019
         </abbr>
 
         <address class="vcard author">
@@ -167,7 +169,7 @@
 </footer><!-- /.post-info -->                <p><code>from collections import Iterable, Iterator</code></p>
 <h3>1. 可迭代(iterable)对象</h3>
 <p>参考<a href="https://docs.python.org/zh-cn/3/glossary.html#term-iterable">官网链接</a></p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">I</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">I</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">v</span>
 
@@ -175,11 +177,7 @@
         <span class="k">return</span> <span class="nb">iter</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">v</span><span class="p">])</span>  <span class="c1"># 返回的应该是迭代器对象</span>
 
 <span class="n">i</span> <span class="o">=</span> <span class="n">I</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">),</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">))</span> <span class="c1"># True False</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c1"># &lt;list_iterator object at 0x00000000021C8358&gt;</span>
-
-<span class="k">class</span> <span class="nc">I</span><span class="p">:</span>
-    <span class="k">def …</span></pre></div>
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance …</span></code></pre></div>
                 <a class="readmore" href="/blog/pythonzhong-de-die-dai-qi-sheng-cheng-qi.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
@@ -193,7 +191,7 @@
                 <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2019-11-17T10:37:00+08:00">
-                Published: 周日 17 十一月 2019
+                Published: Sun 17 November 2019
         </abbr>
 
         <address class="vcard author">
@@ -203,6 +201,8 @@
 
 </footer><!-- /.post-info -->                <p>这里主要是一些学习python的记录，也许会少量夹杂一些个人感悟。 
 愿大家共同进步......</p>
+<p>Sat 11 Mar 2023 07:54:18 PM CST 
+几年过去了，没写什么东西 …</p>
                 <a class="readmore" href="/blog/welcome-huan-ying-guang-lin.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
@@ -221,10 +221,10 @@
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
                 </address><!-- /#about -->
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
 </body>
