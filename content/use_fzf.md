@@ -16,7 +16,7 @@ brew install fzf
 apt install fzf
 ```
 
-参考：[github fzf](https://github.com/junegunn/fzf[GitHub - junegunn/fzf: A command-line fuzzy finder](https://github.com/junegunn/fzf))
+参考：[github fzf](https://github.com/junegunn/fzf)
 
 ## 安装并配置fzf-tab-completion
 
