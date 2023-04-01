@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-hans-cn">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>在windows wsl2 中使用代理</title>
+        <link rel="stylesheet" href="/blog/theme/css/main.css" />
+        <meta name="description" content="创建proxy.sh touch ~/proxy.sh # The content of proxy.sh export hostip=$(ip route | grep default | awk '{print $3}') export hostport=10810 alias..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/blog/">BEGIN NOW</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/blog/category/article.html">article</a></li>
+                    <li><a href="/blog/category/review.html">review</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/blog/zai-windows-wsl2-zhong-shi-yong-dai-li.html" rel="bookmark"
+           title="Permalink to 在windows wsl2 中使用代理">在windows wsl2 中使用代理</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2023-04-01T11:40:00+08:00">
+                Published: Sat 01 April 2023
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/blog/author/luyangong.html">luyangong</a>
+        </address>
+<p>In <a href="/blog/category/article.html">article</a>.</p>
+
+</footer><!-- /.post-info -->      <h2>创建proxy.sh</h2>
+<div class="highlight"><pre><span></span><code>touch<span class="w"> </span>~/proxy.sh
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># The content of proxy.sh</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">hostip</span><span class="o">=</span><span class="k">$(</span>ip<span class="w"> </span>route<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>default<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $3}&#39;</span><span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">hostport</span><span class="o">=</span><span class="m">10810</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">proxy</span><span class="o">=</span><span class="s1">&#39;</span>
+<span class="s1">    export HTTPS_PROXY=&quot;socks5://${hostip}:${hostport}&quot;;</span>
+<span class="s1">    export HTTP_PROXY=&quot;socks5://${hostip}:${hostport}&quot;;</span>
+<span class="s1">    export ALL_PROXY=&quot;socks5://${hostip}:${hostport}&quot;;</span>
+<span class="s1">    echo -e &quot;Acquire::http::Proxy \&quot;http://${hostip}:${hostport}\&quot;;&quot; | sudo tee -a /etc/apt/apt.conf.d/proxy.conf &gt; /dev/null;</span>
+<span class="s1">    echo -e &quot;Acquire::https::Proxy \&quot;http://${hostip}:${hostport}\&quot;;&quot; | sudo tee -a /etc/apt/apt.conf.d/proxy.conf &gt; /dev/null;</span>
+<span class="s1">    echo &quot;Proxy has been set to ${HTTP_PROXY}&quot;</span>
+<span class="s1">&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">unproxy</span><span class="o">=</span><span class="s1">&#39;</span>
+<span class="s1">    unset HTTPS_PROXY;</span>
+<span class="s1">    unset HTTP_PROXY;</span>
+<span class="s1">    unset ALL_PROXY;</span>
+<span class="s1">    sudo sed -i -e &#39;</span>/Acquire::http::Proxy/d<span class="s1">&#39; /etc/apt/apt.conf.d/proxy.conf;</span>
+<span class="s1">    sudo sed -i -e &#39;</span>/Acquire::https::Proxy/d<span class="s1">&#39; /etc/apt/apt.conf.d/proxy.conf;</span>
+<span class="s1">    echo &quot;Proxy has been unset&quot;</span>
+<span class="s1">&#39;</span>
+</code></pre></div>
+
+<h2>使用proxy.sh</h2>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source ~/proxy.sh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="nb">source</span><span class="w"> </span>~/.zshrc
+proxy<span class="w"> </span><span class="c1"># Proxy has been set to ...</span>
+unproxy<span class="w"> </span><span class="c1"># Proxy has been unset</span>
+</code></pre></div>
+
+<p>参照： <a href="https://zhuanlan.zhihu.com/p/414627975">WSL2内使用windows的v2ray代理配置方式</a></p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://www.cnblogs.com/lyg-blog/">博客园</a></li>
+                            <li><a href="https://github.com/luyangong">Github</a></li>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
