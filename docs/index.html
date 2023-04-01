@@ -19,7 +19,87 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/blog/ma-ke-si-wei-bo-xin-jiao-lun-li-yu-zi-ben-zhu-yi-jing-shen-du-hou-gan.html">马克思韦伯《新教伦理与资本主义精神》读后感</a></h1>
+                    <h1 class="entry-title"><a href="/blog/zai-windows-wsl2-zhong-shi-yong-dai-li.html">在windows wsl2 中使用代理</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2023-04-01T11:40:00+08:00">
+                Published: Sat 01 April 2023
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/blog/author/luyangong.html">luyangong</a>
+        </address>
+<p>In <a href="/blog/category/article.html">article</a>.</p>
+
+</footer><!-- /.post-info --><h2>创建proxy.sh</h2>
+<div class="highlight"><pre><span></span><code>touch<span class="w"> </span>~/proxy.sh
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># The content of proxy.sh</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">hostip</span><span class="o">=</span><span class="k">$(</span>ip<span class="w"> </span>route<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>default<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $3}&#39;</span><span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">hostport</span><span class="o">=</span><span class="m">10810</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">proxy</span><span class="o">=</span><span class="s1">&#39;</span>
+<span class="s1">    export HTTPS_PROXY=&quot;socks5://${hostip}:${hostport}&quot;;</span>
+<span class="s1">    export HTTP_PROXY=&quot;socks5://${hostip}:${hostport}&quot;;</span>
+<span class="s1">    export ALL_PROXY=&quot;socks5://${hostip}:${hostport}&quot;;</span>
+<span class="s1">    echo -e &quot;Acquire::http::Proxy \&quot;http://${hostip}:${hostport}\&quot;;&quot; | sudo tee -a /etc/apt/apt.conf.d/proxy.conf &gt; /dev/null;</span>
+<span class="s1">    echo -e &quot;Acquire::https::Proxy \&quot;http://${hostip}:${hostport}\&quot;;&quot; | sudo tee -a /etc/apt/apt.conf.d/proxy.conf &gt; /dev/null;</span>
+<span class="s1">    echo &quot;Proxy has been set to ${HTTP_PROXY}&quot;</span>
+<span class="s1">&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">unproxy</span><span class="o">=</span><span class="s1">&#39;</span>
+<span class="s1">    unset HTTPS_PROXY;</span>
+<span class="s1">    unset HTTP_PROXY;</span>
+<span class="s1">    unset ALL_PROXY;</span>
+<span class="s1">    sudo sed -i -e &#39;</span>/Acquire::http::Proxy/d<span class="s1">&#39; /etc/apt/apt.conf.d/proxy.conf;</span>
+<span class="s1">    sudo sed -i -e &#39;</span>/Acquire::https::Proxy/d<span class="s1">&#39; /etc/apt/apt.conf.d/proxy.conf;</span>
+<span class="s1">    echo &quot;Proxy has been unset&quot;</span>
+<span class="s1">&#39;</span>
+</code></pre></div>
+
+<h2>使用proxy.sh</h2>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source ~/proxy.sh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="nb">source</span><span class="w"> </span>~/.zshrc
+proxy<span class="w"> </span><span class="c1"># Proxy has been set to ...</span>
+unproxy<span class="w"> </span><span class="c1"># Proxy has been unset</span>
+</code></pre></div>
+
+<p>参照： <a href="https://zhuanlan.zhihu.com/p/414627975">WSL2内使用windows的v2ray代理配置方式</a></p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/blog/zai-zshzhong-pei-zhi-fzf.html" rel="bookmark"
+                           title="Permalink to 在zsh中配置fzf">在zsh中配置fzf</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2023-03-31T23:18:00+08:00">
+                Published: Fri 31 March 2023
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/blog/author/luyangong.html">luyangong</a>
+        </address>
+<p>In <a href="/blog/category/article.html">article</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>fzf简介</h2>
+<p>fzf是一个命令行模糊查询的工具。主要使用go语言实现。它提供一个友好的命令行模糊查询的界面，按照它的格式要求传参后，可以很好实现先搜索再操作，即"search …</p>
+                <a class="readmore" href="/blog/zai-zshzhong-pei-zhi-fzf.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/blog/ma-ke-si-wei-bo-xin-jiao-lun-li-yu-zi-ben-zhu-yi-jing-shen-du-hou-gan.html" rel="bookmark"
+                           title="Permalink to 马克思韦伯《新教伦理与资本主义精神》读后感">马克思韦伯《新教伦理与资本主义精神》读后感</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2023-03-11T21:57:00+08:00">
                 Published: Sat 11 March 2023
@@ -30,14 +110,10 @@
         </address>
 <p>In <a href="/blog/category/review.html">review</a>.</p>
 <p>tags: <a href="/blog/tag/bookreview.html">bookreview</a> </p>
-</footer><!-- /.post-info --><p>&emsp;&emsp;主要是讲了在资本主义背后，所支撑它的伦理观念。作者发现，新教伦理，即禁欲主义，克勤克俭、尽忠职守等等一些观念，促成了人们把工作当作一种天职去做，并不断积累资本，在此之上才产生了资本主义。从这个角度而言，当下的中国仍未有资本主义精神，虽然克勤克俭、尽忠职守的观念也是有的，但这并非主流的价值观，故而，在资本主义发展之后，道德观念的滞后产生了很多问题。王德峰教授说，"富贵不知乐业，贫穷难耐凄凉", 可能正是这个意思。</p>
-<p>&emsp;&emsp;书中有句话，拥有财富会使人懈怠，享受财富会使人懒散并沉溺于肉体的享乐，最为重要的是它会使人在追求正直的生活时精神涣散。当下确实有这个危机。一方面，大部分人仍然终身碌碌，却几乎仅得裹腹，另一方面，有钱有闲的阶级却道德沦丧，无法承担相应的社会责任。这已然成了现实的问题。</p>
-<p>&emsp;&emsp;这些问题说起来令人悲观，不过无论如何，当下其实已是资本主义社会，所以，为了资本主义的进一步发展，相应的道德观念估计也会相应产生，毕竟，没有相应的坚定信念，仅仅从大流，就无法取得领先。</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p>&emsp;&emsp;主要是讲了在资本主义背后，所支撑它的伦理观念。作者发现，新教伦理，即禁欲主义，克勤克俭、尽忠职守等等一些观念，促成 …</p>
+                <a class="readmore" href="/blog/ma-ke-si-wei-bo-xin-jiao-lun-li-yu-zi-ben-zhu-yi-jing-shen-du-hou-gan.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
