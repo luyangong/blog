@@ -56,7 +56,30 @@ apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&g
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;参考：&lt;a href="https://github.com/junegunn/fzf[GitHub - junegunn/fzf: A command-line fuzzy finder](https://github.com/junegunn/fzf)"&gt;github fzf&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;安装&lt;/h2&gt;</content><category term="article"></category></entry><entry><title>Vim配置文件.Vimrc</title><link href="https://luyangong.github.io/blog/vimpei-zhi-wen-jian-vimrc.html" rel="alternate"></link><published>2019-12-22T23:40:00+08:00</published><updated>2019-12-22T23:40:00+08:00</updated><author><name>luyangong</name></author><id>tag:luyangong.github.io,2019-12-22:/blog/vimpei-zhi-wen-jian-vimrc.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="s2"&gt;&amp;quot; 底部操作指令Tab自动补全&lt;/span&gt;
+&lt;h2&gt;安装并配置fzf-tab-completion&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl&lt;span class="w"&gt; &lt;/span&gt;https://raw.githubusercontent.com/lincheney/fzf-tab-completion/master/zsh/fzf-zsh-completion.sh&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/fzf-zsh-completion.sh
+
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;source ~/fzf-zsh-completion.sh&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/.zshrc
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;bindkey &amp;#39;^]&amp;#39; fzf_completion&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/.zshrc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 使用ctrl + ]触发fzf补全&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;参考：&lt;a href="https://github.com/lincheney/fzf-tab-completion"&gt;github fzf-tab-completion&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;安装并配置fzf-history-search&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl&lt;span class="w"&gt; &lt;/span&gt;https://raw.githubusercontent.com/joshskidmore/zsh-fzf-history-search/master/zsh-fzf-history-search.zsh&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/zsh-fzf-history-search.zsh
+
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;source ~/zsh-fzf-history-search.zsh&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/.zshrc
+
+&lt;span class="c1"&gt;# 以下只是设置fzf样式，可选&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;FZF_DEFAULT_OPTS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;--height 60% --reverse --color border:46 --prompt=&amp;quot;➤ &amp;quot;&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;FZF_COMPLETION_OPTS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$FZF_DEFAULT_OPTS&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;参考：&lt;a href="https://github.com//joshskidmore/zsh-fzf-history-search"&gt;github fzf-history-search&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;重置zsh&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;source&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这样，ctrl-r搜索history，或者在输入命令并按ctrl-]时，都将触发fzf搜索。&lt;/p&gt;</content><category term="article"></category></entry><entry><title>Vim配置文件.Vimrc</title><link href="https://luyangong.github.io/blog/vimpei-zhi-wen-jian-vimrc.html" rel="alternate"></link><published>2019-12-22T23:40:00+08:00</published><updated>2019-12-22T23:40:00+08:00</updated><author><name>luyangong</name></author><id>tag:luyangong.github.io,2019-12-22:/blog/vimpei-zhi-wen-jian-vimrc.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="s2"&gt;&amp;quot; 底部操作指令Tab自动补全&lt;/span&gt;
 
 &lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;wildmenu&lt;/span&gt;
 &lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;wildmode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;longest&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;full&lt;/span&gt;

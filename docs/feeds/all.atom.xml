@@ -56,7 +56,30 @@ apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&g
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;参考：&lt;a href="https://github.com/junegunn/fzf[GitHub - junegunn/fzf: A command-line fuzzy finder](https://github.com/junegunn/fzf)"&gt;github fzf&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;安装&lt;/h2&gt;</content><category term="article"></category></entry><entry><title>马克思韦伯《新教伦理与资本主义精神》读后感</title><link href="https://luyangong.github.io/blog/ma-ke-si-wei-bo-xin-jiao-lun-li-yu-zi-ben-zhu-yi-jing-shen-du-hou-gan.html" rel="alternate"></link><published>2023-03-11T21:57:00+08:00</published><updated>2023-03-11T21:57:00+08:00</updated><author><name>luyangong</name></author><id>tag:luyangong.github.io,2023-03-11:/blog/ma-ke-si-wei-bo-xin-jiao-lun-li-yu-zi-ben-zhu-yi-jing-shen-du-hou-gan.html</id><summary type="html">&lt;p&gt;&amp;emsp;&amp;emsp;主要是讲了在资本主义背后，所支撑它的伦理观念。作者发现，新教伦理，即禁欲主义，克勤克俭、尽忠职守等等一些观念，促成 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&amp;emsp;&amp;emsp;主要是讲了在资本主义背后，所支撑它的伦理观念。作者发现，新教伦理，即禁欲主义，克勤克俭、尽忠职守等等一些观念，促成了人们把工作当作一种天职去做，并不断积累资本，在此之上才产生了资本主义。从这个角度而言，当下的中国仍未有资本主义精神，虽然克勤克俭、尽忠职守的观念也是有的，但这并非主流的价值观，故而，在资本主义发展之后，道德观念的滞后产生了很多问题。王德峰教授说，"富贵不知乐业，贫穷难耐凄凉", 可能正是这个意思。&lt;/p&gt;
+&lt;h2&gt;安装并配置fzf-tab-completion&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl&lt;span class="w"&gt; &lt;/span&gt;https://raw.githubusercontent.com/lincheney/fzf-tab-completion/master/zsh/fzf-zsh-completion.sh&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/fzf-zsh-completion.sh
+
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;source ~/fzf-zsh-completion.sh&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/.zshrc
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;bindkey &amp;#39;^]&amp;#39; fzf_completion&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/.zshrc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 使用ctrl + ]触发fzf补全&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;参考：&lt;a href="https://github.com/lincheney/fzf-tab-completion"&gt;github fzf-tab-completion&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;安装并配置fzf-history-search&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl&lt;span class="w"&gt; &lt;/span&gt;https://raw.githubusercontent.com/joshskidmore/zsh-fzf-history-search/master/zsh-fzf-history-search.zsh&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/zsh-fzf-history-search.zsh
+
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;source ~/zsh-fzf-history-search.zsh&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/.zshrc
+
+&lt;span class="c1"&gt;# 以下只是设置fzf样式，可选&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;FZF_DEFAULT_OPTS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;--height 60% --reverse --color border:46 --prompt=&amp;quot;➤ &amp;quot;&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;FZF_COMPLETION_OPTS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$FZF_DEFAULT_OPTS&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;参考：&lt;a href="https://github.com//joshskidmore/zsh-fzf-history-search"&gt;github fzf-history-search&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;重置zsh&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;source&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这样，ctrl-r搜索history，或者在输入命令并按ctrl-]时，都将触发fzf搜索。&lt;/p&gt;</content><category term="article"></category></entry><entry><title>马克思韦伯《新教伦理与资本主义精神》读后感</title><link href="https://luyangong.github.io/blog/ma-ke-si-wei-bo-xin-jiao-lun-li-yu-zi-ben-zhu-yi-jing-shen-du-hou-gan.html" rel="alternate"></link><published>2023-03-11T21:57:00+08:00</published><updated>2023-03-11T21:57:00+08:00</updated><author><name>luyangong</name></author><id>tag:luyangong.github.io,2023-03-11:/blog/ma-ke-si-wei-bo-xin-jiao-lun-li-yu-zi-ben-zhu-yi-jing-shen-du-hou-gan.html</id><summary type="html">&lt;p&gt;&amp;emsp;&amp;emsp;主要是讲了在资本主义背后，所支撑它的伦理观念。作者发现，新教伦理，即禁欲主义，克勤克俭、尽忠职守等等一些观念，促成 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&amp;emsp;&amp;emsp;主要是讲了在资本主义背后，所支撑它的伦理观念。作者发现，新教伦理，即禁欲主义，克勤克俭、尽忠职守等等一些观念，促成了人们把工作当作一种天职去做，并不断积累资本，在此之上才产生了资本主义。从这个角度而言，当下的中国仍未有资本主义精神，虽然克勤克俭、尽忠职守的观念也是有的，但这并非主流的价值观，故而，在资本主义发展之后，道德观念的滞后产生了很多问题。王德峰教授说，"富贵不知乐业，贫穷难耐凄凉", 可能正是这个意思。&lt;/p&gt;
 &lt;p&gt;&amp;emsp;&amp;emsp;书中有句话，拥有财富会使人懈怠，享受财富会使人懒散并沉溺于肉体的享乐，最为重要的是它会使人在追求正直的生活时精神涣散。当下确实有这个危机。一方面，大部分人仍然终身碌碌，却几乎仅得裹腹，另一方面，有钱有闲的阶级却道德沦丧，无法承担相应的社会责任。这已然成了现实的问题。&lt;/p&gt;
 &lt;p&gt;&amp;emsp;&amp;emsp;这些问题说起来令人悲观，不过无论如何，当下其实已是资本主义社会，所以，为了资本主义的进一步发展，相应的道德观念估计也会相应产生，毕竟，没有相应的坚定信念，仅仅从大流，就无法取得领先。&lt;/p&gt;</content><category term="review"></category><category term="bookreview"></category></entry><entry><title>Vim配置文件.Vimrc</title><link href="https://luyangong.github.io/blog/vimpei-zhi-wen-jian-vimrc.html" rel="alternate"></link><published>2019-12-22T23:40:00+08:00</published><updated>2019-12-22T23:40:00+08:00</updated><author><name>luyangong</name></author><id>tag:luyangong.github.io,2019-12-22:/blog/vimpei-zhi-wen-jian-vimrc.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="s2"&gt;&amp;quot; 底部操作指令Tab自动补全&lt;/span&gt;
 

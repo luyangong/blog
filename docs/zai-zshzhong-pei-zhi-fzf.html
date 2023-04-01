@@ -48,7 +48,30 @@ apt<span class="w"> </span>install<span class="w"> </span>fzf
 </code></pre></div>
 
 <p>参考：<a href="https://github.com/junegunn/fzf[GitHub - junegunn/fzf: A command-line fuzzy finder](https://github.com/junegunn/fzf)">github fzf</a></p>
-<h2>安装</h2>
+<h2>安装并配置fzf-tab-completion</h2>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://raw.githubusercontent.com/lincheney/fzf-tab-completion/master/zsh/fzf-zsh-completion.sh<span class="w"> </span>&gt;<span class="w"> </span>~/fzf-zsh-completion.sh
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source ~/fzf-zsh-completion.sh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;bindkey &#39;^]&#39; fzf_completion&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc<span class="w"> </span><span class="c1"># 使用ctrl + ]触发fzf补全</span>
+</code></pre></div>
+
+<p>参考：<a href="https://github.com/lincheney/fzf-tab-completion">github fzf-tab-completion</a></p>
+<h2>安装并配置fzf-history-search</h2>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://raw.githubusercontent.com/joshskidmore/zsh-fzf-history-search/master/zsh-fzf-history-search.zsh<span class="w"> </span>&gt;<span class="w"> </span>~/zsh-fzf-history-search.zsh
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source ~/zsh-fzf-history-search.zsh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+
+<span class="c1"># 以下只是设置fzf样式，可选</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">FZF_DEFAULT_OPTS</span><span class="o">=</span><span class="s1">&#39;--height 60% --reverse --color border:46 --prompt=&quot;➤ &quot;&#39;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">FZF_COMPLETION_OPTS</span><span class="o">=</span><span class="nv">$FZF_DEFAULT_OPTS</span>
+</code></pre></div>
+
+<p>参考：<a href="https://github.com//joshskidmore/zsh-fzf-history-search">github fzf-history-search</a></p>
+<h2>重置zsh</h2>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/.zshrc
+</code></pre></div>
+
+<p>这样，ctrl-r搜索history，或者在输入命令并按ctrl-]时，都将触发fzf搜索。</p>
     </div><!-- /.entry-content -->
 
   </article>
