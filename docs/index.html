@@ -20,7 +20,32 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://luyangong.github.io/blog/zai-windows-wsl2-zhong-shi-yong-dai-li.html">在windows wsl2 中使用代理</a></h1>
+                    <h1 class="entry-title"><a href="https://luyangong.github.io/blog/shou-ji-ji-lu-you-yong-de-lian-jie.html">收集记录有用的链接</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2023-04-22T13:00:00+08:00">
+                Published: Sat 22 April 2023
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://luyangong.github.io/blog/author/luyangong.html">luyangong</a>
+        </address>
+<p>In <a href="https://luyangong.github.io/blog/category/article.html">article</a>.</p>
+
+</footer><!-- /.post-info --><h2>How to config the ctags in vim</h2>
+<p>[<a href="https://kulkarniamit.github.io/whatwhyhow/howto/use-vim-ctags.html">Use vim with ctags | what-why-how</a>]</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://luyangong.github.io/blog/zai-windows-wsl2-zhong-shi-yong-dai-li.html" rel="bookmark"
+                           title="Permalink to 在windows wsl2 中使用代理">在windows wsl2 中使用代理</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2023-04-01T11:40:00+08:00">
                 Published: Sat 01 April 2023
@@ -31,7 +56,7 @@
         </address>
 <p>In <a href="https://luyangong.github.io/blog/category/article.html">article</a>.</p>
 
-</footer><!-- /.post-info --><h2>创建proxy.sh</h2>
+</footer><!-- /.post-info -->                <h2>创建proxy.sh</h2>
 <div class="highlight"><pre><span></span><code>touch<span class="w"> </span>~/proxy.sh
 </code></pre></div>
 
@@ -43,33 +68,10 @@
 <span class="s1">    export HTTPS_PROXY=&quot;socks5://${hostip}:${hostport}&quot;;</span>
 <span class="s1">    export HTTP_PROXY=&quot;socks5://${hostip}:${hostport}&quot;;</span>
 <span class="s1">    export ALL_PROXY=&quot;socks5://${hostip}:${hostport}&quot;;</span>
-<span class="s1">    echo -e &quot;Acquire::http::Proxy \&quot;http://${hostip}:${hostport}\&quot;;&quot; | sudo tee -a /etc/apt/apt.conf.d/proxy.conf &gt; /dev/null;</span>
-<span class="s1">    echo -e &quot;Acquire::https::Proxy \&quot;http://${hostip}:${hostport}\&quot;;&quot; | sudo tee -a /etc/apt/apt.conf.d/proxy.conf &gt; /dev/null;</span>
-<span class="s1">    echo &quot;Proxy has been set to ${HTTP_PROXY}&quot;</span>
-<span class="s1">&#39;</span>
-<span class="nb">alias</span><span class="w"> </span><span class="nv">unproxy</span><span class="o">=</span><span class="s1">&#39;</span>
-<span class="s1">    unset HTTPS_PROXY;</span>
-<span class="s1">    unset HTTP_PROXY;</span>
-<span class="s1">    unset ALL_PROXY;</span>
-<span class="s1">    sudo sed -i -e &#39;</span>/Acquire::http::Proxy/d<span class="s1">&#39; /etc/apt/apt.conf.d/proxy.conf;</span>
-<span class="s1">    sudo sed -i -e &#39;</span>/Acquire::https::Proxy/d<span class="s1">&#39; /etc/apt/apt.conf.d/proxy.conf;</span>
-<span class="s1">    echo &quot;Proxy has been unset&quot;</span>
-<span class="s1">&#39;</span>
-</code></pre></div>
-
-<h2>使用proxy.sh</h2>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source ~/proxy.sh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
-<span class="nb">source</span><span class="w"> </span>~/.zshrc
-proxy<span class="w"> </span><span class="c1"># Proxy has been set to ...</span>
-unproxy<span class="w"> </span><span class="c1"># Proxy has been unset</span>
-</code></pre></div>
-
-<p>参照： <a href="https://zhuanlan.zhihu.com/p/414627975">WSL2内使用windows的v2ray代理配置方式</a></p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<span class="s1">    echo -e &quot;Acquire::http::Proxy \&quot;http://${hostip}:${hostport}\&quot;;&quot; | sudo …</span></code></pre></div>
+                <a class="readmore" href="https://luyangong.github.io/blog/zai-windows-wsl2-zhong-shi-yong-dai-li.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
