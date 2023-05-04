@@ -25,3 +25,5 @@ Category:  article
 
 [A Guide to Parsing: Algorithms and Terminology](https://www.javacodegeeks.com/2017/09/guide-parsing-algorithms-terminology.html) 
 
+[A Python Interpreter Written in Python](https://aosabook.org/en/500L/a-python-interpreter-written-in-python.html)
+
