@@ -21,3 +21,7 @@ Category:  article
 
 [insidethepythonvirtualmachine](https://leanpub.com/insidethepythonvirtualmachine/read#leanpub-auto-introduction)
 
+## about compiler or interpreter
+
+[A Guide to Parsing: Algorithms and Terminology](https://www.javacodegeeks.com/2017/09/guide-parsing-algorithms-terminology.html) 
+
