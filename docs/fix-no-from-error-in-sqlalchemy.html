@@ -4,9 +4,10 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
-        <title>BEGIN NOW - article</title>
+        <title>fix no From Error in sqlalchemy</title>
         <link rel="stylesheet" href="https://luyangong.github.io/blog/theme/css/main.css" />
         <link href="https://luyangong.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="BEGIN NOW Atom Feed" />
+        <meta name="description" content="代码 from typing import List from typing import Optional from sqlalchemy import ForeignKey from sqlalchemy import String from sqlalchemy.orm import..." />
 </head>
 
 <body id="index" class="home">
@@ -17,10 +18,15 @@
                     <li><a href="https://luyangong.github.io/blog/category/review.html">review</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://luyangong.github.io/blog/fix-no-from-error-in-sqlalchemy.html" rel="bookmark"
+           title="Permalink to fix no From Error in sqlalchemy">fix no From Error in sqlalchemy</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://luyangong.github.io/blog/fix-no-from-error-in-sqlalchemy.html">fix no From Error in sqlalchemy</a></h1>
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2024-02-21T22:56:00+08:00">
                 Published: Wed 21 February 2024
@@ -31,7 +37,7 @@
         </address>
 <p>In <a href="https://luyangong.github.io/blog/category/article.html">article</a>.</p>
 
-</footer><!-- /.post-info --><h2>代码</h2>
+</footer><!-- /.post-info -->      <h2>代码</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
 <span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">ForeignKey</span>
@@ -127,179 +133,11 @@
 </blockquote>
 <h2>解释</h2>
 <div class="highlight"><pre><span></span><code>实际上exist语句是一个子查询(subquery), 在subquery中不允许重复查询主查询中存在的表(Calling the same table twice (FROM Revision) in the same query is not allowed unless you use an alias.)
-</code></pre></div>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://luyangong.github.io/blog/shou-ji-ji-lu-you-yong-de-lian-jie.html" rel="bookmark"
-                           title="Permalink to 收集记录有用的链接">收集记录有用的链接</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2023-04-22T13:00:00+08:00">
-                Published: Sat 22 April 2023
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://luyangong.github.io/blog/author/luyangong.html">luyangong</a>
-        </address>
-<p>In <a href="https://luyangong.github.io/blog/category/article.html">article</a>.</p>
-
-</footer><!-- /.post-info -->                <h2>about vim</h2>
-<h3>1. How to config the ctags in vim</h3>
-<p>[<a href="https://kulkarniamit.github.io/whatwhyhow/howto/use-vim-ctags.html">Use vim with ctags | what-why-how</a>]</p>
-<h3>2. awesome vim plugins</h3>
-<blockquote>
-<p>You can search the vim plugin in this website.</p>
-</blockquote>
-<p><a href="https://vimawesome.com">vim awesome</a></p>
-<h2>about python</h2>
-<h3>1. inside the python virtual machine(a book)</h3>
-<p><a href="https://leanpub.com/insidethepythonvirtualmachine/read#leanpub-auto-introduction">insidethepythonvirtualmachine</a></p>
-<h2>about compiler or interpreter</h2>
-<p><a href="https://www.javacodegeeks.com/2017/09/guide-parsing-algorithms-terminology.html">A Guide to Parsing: Algorithms …</a></p>
-                <a class="readmore" href="https://luyangong.github.io/blog/shou-ji-ji-lu-you-yong-de-lian-jie.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://luyangong.github.io/blog/zai-windows-wsl2-zhong-shi-yong-dai-li.html" rel="bookmark"
-                           title="Permalink to 在windows wsl2 中使用代理">在windows wsl2 中使用代理</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2023-04-01T11:40:00+08:00">
-                Published: Sat 01 April 2023
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://luyangong.github.io/blog/author/luyangong.html">luyangong</a>
-        </address>
-<p>In <a href="https://luyangong.github.io/blog/category/article.html">article</a>.</p>
-
-</footer><!-- /.post-info -->                <h2>创建proxy.sh</h2>
-<div class="highlight"><pre><span></span><code>touch<span class="w"> </span>~/proxy.sh
 </code></pre></div>
+    </div><!-- /.entry-content -->
 
-<div class="highlight"><pre><span></span><code><span class="c1"># The content of proxy.sh</span>
-
-<span class="nb">export</span><span class="w"> </span><span class="nv">hostip</span><span class="o">=</span><span class="k">$(</span>ip<span class="w"> </span>route<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>default<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $3}&#39;</span><span class="k">)</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">hostport</span><span class="o">=</span><span class="m">10810</span>
-<span class="nb">alias</span><span class="w"> </span><span class="nv">proxy</span><span class="o">=</span><span class="s1">&#39;</span>
-<span class="s1">    export HTTPS_PROXY=&quot;socks5://${hostip}:${hostport}&quot;;</span>
-<span class="s1">    export HTTP_PROXY=&quot;socks5://${hostip}:${hostport}&quot;;</span>
-<span class="s1">    export ALL_PROXY=&quot;socks5://${hostip}:${hostport}&quot;;</span>
-<span class="s1">    echo -e &quot;Acquire::http::Proxy \&quot;http://${hostip}:${hostport}\&quot;;&quot; | sudo …</span></code></pre></div>
-                <a class="readmore" href="https://luyangong.github.io/blog/zai-windows-wsl2-zhong-shi-yong-dai-li.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://luyangong.github.io/blog/zai-zshzhong-pei-zhi-fzf.html" rel="bookmark"
-                           title="Permalink to 在zsh中配置fzf">在zsh中配置fzf</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2023-03-31T23:18:00+08:00">
-                Published: Fri 31 March 2023
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://luyangong.github.io/blog/author/luyangong.html">luyangong</a>
-        </address>
-<p>In <a href="https://luyangong.github.io/blog/category/article.html">article</a>.</p>
-
-</footer><!-- /.post-info -->                <h2>fzf简介</h2>
-<p>fzf是一个命令行模糊查询的工具。主要使用go语言实现。它提供一个友好的命令行模糊查询的界面，按照它的格式要求传参后，可以很好实现先搜索再操作，即"search …</p>
-                <a class="readmore" href="https://luyangong.github.io/blog/zai-zshzhong-pei-zhi-fzf.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://luyangong.github.io/blog/vimpei-zhi-wen-jian-vimrc.html" rel="bookmark"
-                           title="Permalink to Vim配置文件.Vimrc">Vim配置文件.Vimrc</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2019-12-22T23:40:00+08:00">
-                Published: Sun 22 December 2019
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://luyangong.github.io/blog/author/luyangong.html">luyangong</a>
-        </address>
-<p>In <a href="https://luyangong.github.io/blog/category/article.html">article</a>.</p>
-
-</footer><!-- /.post-info -->                <div class="highlight"><pre><span></span><code><span class="s2">&quot; 底部操作指令Tab自动补全</span>
-
-<span class="nb">set</span> <span class="n">wildmenu</span>
-<span class="nb">set</span> <span class="n">wildmode</span><span class="o">=</span><span class="n">longest</span><span class="p">:</span><span class="nb">list</span><span class="p">,</span><span class="n">full</span>
-
-<span class="nb">set</span> <span class="n">smarttab</span>
-<span class="nb">set</span> <span class="n">showmode</span>
-<span class="nb">set</span> <span class="n">number</span>
-<span class="nb">set</span> <span class="n">nocompatible</span>
-
-<span class="s2">&quot; 设置tab符长度为4个空格</span>
-<span class="nb">set</span> <span class="n">tabstop</span><span class="o">=</span><span class="mi">4</span>
-
-<span class="s2">&quot; 设置换行自动缩进长度为4个空格</span>
-<span class="nb">set</span> <span class="n">shiftwidth</span><span class="o">=</span><span class="mi">4</span>
-
-<span class="s2">&quot; 设置tab符自动转换为空格</span>
-<span class="nb">set</span> <span class="n">expandtab</span>
-
-<span class="s2">&quot; 设置 …</span></code></pre></div>
-                <a class="readmore" href="https://luyangong.github.io/blog/vimpei-zhi-wen-jian-vimrc.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://luyangong.github.io/blog/pythonzhong-de-die-dai-qi-sheng-cheng-qi.html" rel="bookmark"
-                           title="Permalink to Python中的迭代器、生成器">Python中的迭代器、生成器</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2019-11-17T11:10:00+08:00">
-                Published: Sun 17 November 2019
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://luyangong.github.io/blog/author/luyangong.html">luyangong</a>
-        </address>
-<p>In <a href="https://luyangong.github.io/blog/category/article.html">article</a>.</p>
-
-</footer><!-- /.post-info -->                <p><code>from collections import Iterable, Iterator</code></p>
-<h3>1. 可迭代(iterable)对象</h3>
-<p>参考<a href="https://docs.python.org/zh-cn/3/glossary.html#term-iterable">官网链接</a></p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">I</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">v</span>
-
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">iter</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">v</span><span class="p">])</span>  <span class="c1"># 返回的应该是迭代器对象</span>
-
-<span class="n">i</span> <span class="o">=</span> <span class="n">I</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance …</span></code></pre></div>
-                <a class="readmore" href="https://luyangong.github.io/blog/pythonzhong-de-die-dai-qi-sheng-cheng-qi.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>

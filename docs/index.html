@@ -20,7 +20,127 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://luyangong.github.io/blog/shou-ji-ji-lu-you-yong-de-lian-jie.html">收集记录有用的链接</a></h1>
+                    <h1 class="entry-title"><a href="https://luyangong.github.io/blog/fix-no-from-error-in-sqlalchemy.html">fix no From Error in sqlalchemy</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2024-02-21T22:56:00+08:00">
+                Published: Wed 21 February 2024
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://luyangong.github.io/blog/author/luyangong.html">luyangong</a>
+        </address>
+<p>In <a href="https://luyangong.github.io/blog/category/article.html">article</a>.</p>
+
+</footer><!-- /.post-info --><h2>代码</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">ForeignKey</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">String</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">DeclarativeBase</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">Mapped</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">mapped_column</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">relationship</span>
+
+<span class="k">class</span> <span class="nc">Base</span><span class="p">(</span><span class="n">DeclarativeBase</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s2">&quot;user_account&quot;</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">Mapped</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapped_column</span><span class="p">(</span><span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">name</span><span class="p">:</span> <span class="n">Mapped</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapped_column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+    <span class="n">fullname</span><span class="p">:</span> <span class="n">Mapped</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>
+    <span class="n">addresses</span><span class="p">:</span> <span class="n">Mapped</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="s2">&quot;Address&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">relationship</span><span class="p">(</span>
+        <span class="n">back_populates</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="n">cascade</span><span class="o">=</span><span class="s2">&quot;all, delete-orphan&quot;</span>
+    <span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;User(id=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">!r}</span><span class="s2">, name=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">!r}</span><span class="s2">, fullname=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">fullname</span><span class="si">!r}</span><span class="s2">)&quot;</span>
+
+<span class="k">class</span> <span class="nc">Address</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s2">&quot;address&quot;</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">Mapped</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapped_column</span><span class="p">(</span><span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">email_address</span><span class="p">:</span> <span class="n">Mapped</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">user_id</span><span class="p">:</span> <span class="n">Mapped</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapped_column</span><span class="p">(</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s2">&quot;user_account.id&quot;</span><span class="p">))</span>
+    <span class="n">user</span><span class="p">:</span> <span class="n">Mapped</span><span class="p">[</span><span class="s2">&quot;User&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">relationship</span><span class="p">(</span><span class="n">back_populates</span><span class="o">=</span><span class="s2">&quot;addresses&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Address(id=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">!r}</span><span class="s2">, email_address=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">email_address</span><span class="si">!r}</span><span class="s2">)&quot;</span>
+
+
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s2">&quot;sqlite://&quot;</span><span class="p">,</span> <span class="n">echo</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">Base</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">create_all</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">Session</span>
+
+<span class="k">with</span> <span class="n">Session</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+    <span class="n">spongebob</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;spongebob&quot;</span><span class="p">,</span>
+        <span class="n">fullname</span><span class="o">=</span><span class="s2">&quot;Spongebob Squarepants&quot;</span><span class="p">,</span>
+        <span class="n">addresses</span><span class="o">=</span><span class="p">[</span><span class="n">Address</span><span class="p">(</span><span class="n">email_address</span><span class="o">=</span><span class="s2">&quot;spongebob@sqlalchemy.org&quot;</span><span class="p">)],</span>
+    <span class="p">)</span>
+    <span class="n">sandy</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;sandy&quot;</span><span class="p">,</span>
+        <span class="n">fullname</span><span class="o">=</span><span class="s2">&quot;Sandy Cheeks&quot;</span><span class="p">,</span>
+        <span class="n">addresses</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">Address</span><span class="p">(</span><span class="n">email_address</span><span class="o">=</span><span class="s2">&quot;sandy@sqlalchemy.org&quot;</span><span class="p">),</span>
+            <span class="n">Address</span><span class="p">(</span><span class="n">email_address</span><span class="o">=</span><span class="s2">&quot;sandy@squirrelpower.org&quot;</span><span class="p">),</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">patrick</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;patrick&quot;</span><span class="p">,</span> <span class="n">fullname</span><span class="o">=</span><span class="s2">&quot;Patrick Star&quot;</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">add_all</span><span class="p">([</span><span class="n">spongebob</span><span class="p">,</span> <span class="n">sandy</span><span class="p">,</span> <span class="n">patrick</span><span class="p">])</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+<span class="c1"># with Session(engine) as session:</span>
+    <span class="c1"># print(session.query(User).filter(User.name == &#39;sandy&#39;).all())</span>
+
+<span class="k">def</span> <span class="nf">raise_error</span><span class="p">():</span>
+    <span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">exists</span><span class="p">,</span> <span class="n">and_</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">User</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">Address</span><span class="p">,</span> <span class="n">Address</span><span class="o">.</span><span class="n">user_id</span> <span class="o">==</span> <span class="n">User</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">exists</span><span class="p">()</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+                <span class="n">and_</span><span class="p">(</span><span class="n">Address</span><span class="o">.</span><span class="n">email_address</span><span class="o">.</span><span class="n">like</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">qlalchemy%&#39;</span><span class="p">),</span> <span class="n">Address</span><span class="o">.</span><span class="n">user_id</span> <span class="o">==</span> <span class="n">User</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+            <span class="p">))</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">fix_error</span><span class="p">():</span>
+    <span class="c1"># The answer: https://stackoverflow.com/questions/35690518/sqlalchemy-query-filter-returned-no-from-clauses-due-to-auto-correlation</span>
+    <span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">exists</span><span class="p">,</span> <span class="n">and_</span>
+    <span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">aliased</span>
+
+    <span class="n">aliasedAddr</span> <span class="o">=</span> <span class="n">aliased</span><span class="p">(</span><span class="n">Address</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">User</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">Address</span><span class="p">,</span> <span class="n">Address</span><span class="o">.</span><span class="n">user_id</span> <span class="o">==</span> <span class="n">User</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">exists</span><span class="p">()</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+                <span class="n">and_</span><span class="p">(</span><span class="n">aliasedAddr</span><span class="o">.</span><span class="n">email_address</span><span class="o">.</span><span class="n">like</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">qlalchemy%&#39;</span><span class="p">),</span> <span class="n">aliasedAddr</span><span class="o">.</span><span class="n">user_id</span> <span class="o">==</span> <span class="n">User</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+            <span class="p">))</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">raise_error</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="n">fix_error</span><span class="p">()</span>
+</code></pre></div>
+
+<h2>说明</h2>
+<p>执行raise_error函数会报错</p>
+<blockquote>
+<p>sqlalchemy.exc.InvalidRequestError: Select statement '<sqlalchemy.sql.selectable.Select object at 0x7f16eb0989a0>' returned no FROM clauses due to auto-correlation; specify correlate(<tables>) to control correlation manually. </p>
+</blockquote>
+<h2>解释</h2>
+<div class="highlight"><pre><span></span><code>实际上exist语句是一个子查询(subquery), 在subquery中不允许重复查询主查询中存在的表(Calling the same table twice (FROM Revision) in the same query is not allowed unless you use an alias.)
+</code></pre></div>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://luyangong.github.io/blog/shou-ji-ji-lu-you-yong-de-lian-jie.html" rel="bookmark"
+                           title="Permalink to 收集记录有用的链接">收集记录有用的链接</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2023-04-22T13:00:00+08:00">
                 Published: Sat 22 April 2023
@@ -31,7 +151,7 @@
         </address>
 <p>In <a href="https://luyangong.github.io/blog/category/article.html">article</a>.</p>
 
-</footer><!-- /.post-info --><h2>about vim</h2>
+</footer><!-- /.post-info -->                <h2>about vim</h2>
 <h3>1. How to config the ctags in vim</h3>
 <p>[<a href="https://kulkarniamit.github.io/whatwhyhow/howto/use-vim-ctags.html">Use vim with ctags | what-why-how</a>]</p>
 <h3>2. awesome vim plugins</h3>
@@ -43,13 +163,10 @@
 <h3>1. inside the python virtual machine(a book)</h3>
 <p><a href="https://leanpub.com/insidethepythonvirtualmachine/read#leanpub-auto-introduction">insidethepythonvirtualmachine</a></p>
 <h2>about compiler or interpreter</h2>
-<p><a href="https://www.javacodegeeks.com/2017/09/guide-parsing-algorithms-terminology.html">A Guide to Parsing: Algorithms and Terminology</a> </p>
-<p><a href="https://aosabook.org/en/500L/a-python-interpreter-written-in-python.html">A Python Interpreter Written in Python</a></p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<p><a href="https://www.javacodegeeks.com/2017/09/guide-parsing-algorithms-terminology.html">A Guide to Parsing: Algorithms …</a></p>
+                <a class="readmore" href="https://luyangong.github.io/blog/shou-ji-ji-lu-you-yong-de-lian-jie.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
