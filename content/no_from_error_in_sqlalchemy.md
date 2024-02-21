@@ -4,6 +4,12 @@ Category: article
 
 ## 代码
 ```python
+'''
+  Note: Code execute in this environment:
+    python version: 3.8.5
+    sqlalchemy version: 2.0.27
+'''
+
 from typing import List
 from typing import Optional
 from sqlalchemy import ForeignKey
